@@ -1,0 +1,30 @@
+# RegularExpression
+
+^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.*[@#$%^+=])(?!\bPassword24\b|\blogic\b).{8,100}$
+
+Technical implementation for p&o
+
+Regular Expression is divided into 6 parts
+1] (?=.*[0-9]) = for accepting digits
+2] (?=.*[a-z]) = for accepting lower cases character
+3] (?=.*[A-Z]) = for accepting Uppercase character
+4] (?!.*[@#$%^+=]) = for not accepting some special character
+5] (?!\bPassword24\b|l\bogic\b) = for not accepting some words
+6] {8,100} = length of the password
+
+
+Password length should be in between 6 and 8 characters
+
+Change {8,100} part to {6,8} 6 for minimum length and 8 for maximum length
+
+Can use letters, Numbers and Symbols(Except #,&+ or space)
+
+For letter and number, We already have  (?=.*[a-z]) (?=.*[A-Z]) to accept letters and (?=.*[0-9])  to accept the numbers. For Excepting symbol change (?!.*[@#$%^+=])  to (?!.*[#&+\ ]) to ignore #,&+ or space
+
+Use case sensitivity of password 
+
+We already have  (?=.*[a-z]) (?=.*[A-Z]) to check case sensitivity to accept password without case sensitivity change (?=.*[A-Z]) to (?=.*[a-z])
+
+Avoid using common/easily guessable passwords(e.g. Password123, qwerty, 123456 etc.)
+
+Need to change (?!\bPassword24\b|logic) to (?!\bPassword123\b|\bqwerty\b|\b123456\b)

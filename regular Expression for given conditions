@@ -25,11 +25,11 @@ Use case sensitivity of password
 
 We already have  (?=.*[a-z]) (?=.*[A-Z]) to check case sensitivity to accept password without case sensitivity change (?=.*[A-Z]) to (?=.*[a-z])
 
+Avoid using common/easily guessable passwords(e.g. Password123, qwerty, 123456 etc.)
+
+Need to change (?!\bPassword24\b|logic) to (?!\bPassword123\b|\bqwerty\b|\b123456\b)
+
 
 
 Testing onlin use following link
 http://regexr.com/3d2cn
-
-Avoid using common/easily guessable passwords(e.g. Password123, qwerty, 123456 etc.)
-
-Need to change (?!\bPassword24\b|logic) to (?!\bPassword123\b|\bqwerty\b|\b123456\b)
